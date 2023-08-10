@@ -1,0 +1,50 @@
+
+
+
+html {
+  box-sizing: border-box;
+}
+html, 
+body {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #2C2D35;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1160px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+
+
+
+
