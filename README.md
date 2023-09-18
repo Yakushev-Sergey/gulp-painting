@@ -1,5 +1,5 @@
 # gulp-painting
-Верстка и адаптив с применением js табы 
+Верстка и адаптив с применением js табы. Сборка gulp
 
 https://yakushev-sergey.github.io/Art_Store/
 
