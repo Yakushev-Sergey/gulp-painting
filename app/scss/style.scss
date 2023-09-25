@@ -1,7 +1,6 @@
 @use "default";
 
 
-
 .header {
   background-color: #E1EDE6;
   height: 100px;
@@ -92,13 +91,19 @@
   color: #fff;
   font-weight: 700;
   text-align: center;
-  opacity: 1;
+  transition: all .45s ease;
+  transform: scale(0);
+  visibility: hidden;
   z-index: 1;
 }
-// корзина для смартфонов 
-.basket-number.mobile {
-  display: none;
+.basket-number.basket--activ {
+  transform: scale(1);
+  visibility: visible;
+  transition: all .45s ease;
 }
+
+// корзина для смартфонов 
+
 
 // меню телефон
 
@@ -124,29 +129,59 @@
   display: none;
 }
 
+
+
 // модальное окно корзина 
 
 .basket-modal__wrapper {
   position: absolute;
-  width: 700px;
-  height: 300px;
+  width: 600px;
+  min-height: 560px;
   background-color: #E1EDE6;
-  top: 30%;
+  top: 13%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   border-radius: 8px;
 
-  display: none;
+  transform-origin: 0 0 ;
+  transform: rotateX(-90deg);
+  opacity: 0;
+  transition: all .45s linear;
+}
+
+.modal__product {
+  display: flex;
+  overflow-y: hidden;
+  width: 600px;
+  height: 390px;
+  position: relative;
+}
+
+.modal__product::-webkit-scrollbar {
+  background-color: #376B44;
+  height: 8px;
+}
+
+
+.basket-modal__wrapper.open {
+  transform: rotateX(0deg);
+  opacity: 1;
+  transition: all .45s linear;
+}
+
+.coll {
+  font-size: 14px;
+}
+.coll__text {
+  font-size: 14px;
 }
 
 .basket-modal {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
+
 }
 
 .modal__title {
@@ -166,15 +201,96 @@
 }
 
 .modal__result {
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.buy__btn {
+  width: 120px;
+  height: 30px;
+  padding: 0px 0px;
+  margin: 0 20px 30px 10px;
+  border: 1px solid #598d66;
+  font-size: 14px;
+  color: #598d66;
+  -webkit-transition: all .65s ease;
+  transition: all .65s ease;
+  cursor: pointer;
+  &:hover {
+    transition: all .65s ease;
+    background-color: #376B44;
+    color: #D4E8D9;
+  }
+}
+
+.wrapp__result {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 0 20px 20px;
 }
+
 .result-text {
   border-bottom: 2px solid #fff;
   padding-bottom: 5px;
   margin-bottom: 10px;
+}
+
+// карточка товара
+
+.reproductions-paintings__item.basket__item {
+  min-width: 150px;
+  min-height: 390px;
+}
+
+.reproductions-paintings__item .basket__img {
+  width: 110px;
+  height: 190px;
+  margin: 0 0 0px 10px;
+}
+
+.paintings__text p.text__by {
+    color: #86928b;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.paintings__text h4.text__name {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-bottom: 8px;
+}
+
+.paintings__text i.text__description {
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  width: 135px;
+}
+
+.paintings__text span.text__price {
+  font-size: 20px;
+}
+
+
+.paintings__btn.paintings__btn-basket {
+  width: 105px;
+  height: 30px;
+  padding: 0px 0px;
+  margin: 0 20px 30px 10px;
+  border: 1px solid #598d66;
+  font-size: 14px;
+  color: #598d66;
+  -webkit-transition: all .65s ease;
+  transition: all .65s ease;
 }
 
 

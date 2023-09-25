@@ -34,19 +34,27 @@ menuBtn.addEventListener('click', ()=> {
 
 
 
+const basket = document.querySelector('.heder__basket');
+const basketModal = document.querySelector('.basket-modal__wrapper');
+const modalClose = document.querySelector('.modal-close');
+const basketMobile = document.querySelector('.basket-mobile');
 
-// const tabHeader2 =  document.querySelectorAll('.navigation-btn')
-// console.log(tabHeader)
+basket.addEventListener('click', () => {
+  basketModal.classList.add('open')
 
-// tabHeader2.forEach(function (item) {
-//   item.addEventListener('click', function() {
-//     console.log(this.tabHeader2)
+  modalClose.addEventListener('click', () => {
+    basketModal.classList.remove('open')
+  });
+});
 
-//     const contentBox = document.querySelector('#' + this.content);
-//     console.log(contentBox)
+basketMobile.addEventListener('click', () => {
+  basketModal.classList.add('open')
 
-//   })
-// })
+  modalClose.addEventListener('click', () => {
+    basketModal.classList.remove('open')
+  });
+});
+
 
 
 
