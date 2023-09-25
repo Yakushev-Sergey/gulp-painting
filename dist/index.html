@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-  <title>Магазин Картин</title>
+  <title>Document</title>
 
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" rel="stylesheet">
 
 
+
+  <script src="js/basket.js" defer></script>
+  <script src="js/calcCartPrice.js" defer></script>
+  <script src="js/cart-01.js" defer></script>
   <script src="js/main.min.js" defer></script>
 
 </head>
@@ -76,45 +80,63 @@
               </defs>
             </svg>
           </a>
-          <span class="basket-number">1</span>
+          <span class="basket-number" data-col></span>
         </div>
-
-        <!-- модальное окно для корзины  -->
-        <div class="basket-modal__wrapper">
-          <div class="basket-modal">
-            <div class="modal__title">
-              Оформление заказа
-              <img class="modal-close" src="images/multiply.svg" alt="">
-            </div>
-            <div class="modal__product">
-              njdfh
-            </div>
-            <div class="modal__result">
-              <span class="result-text">Итого</span>
-              <span class="result">12.000</span>
-            </div>
-          </div>
-        </div>
-
       </nav>
 
       <!-- корзина мобайл -->
-
+      
       <div class="basket-mobile">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
           <g clip-path="url(#clip0_6967_102)">
-            <path d="M8.25001 20.1667C8.75627 20.1667 9.16668 19.7563 9.16668 19.25C9.16668 18.7438 8.75627 18.3334 8.25001 18.3334C7.74375 18.3334 7.33334 18.7438 7.33334 19.25C7.33334 19.7563 7.74375 20.1667 8.25001 20.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18.3333 20.1667C18.8396 20.1667 19.25 19.7563 19.25 19.25C19.25 18.7438 18.8396 18.3334 18.3333 18.3334C17.8271 18.3334 17.4167 18.7438 17.4167 19.25C17.4167 19.7563 17.8271 20.1667 18.3333 20.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M0.916656 0.916626H4.58332L7.03999 13.1908C7.12381 13.6128 7.35341 13.9919 7.68857 14.2617C8.02374 14.5315 8.44313 14.6749 8.87332 14.6666H17.7833C18.2135 14.6749 18.6329 14.5315 18.9681 14.2617C19.3032 13.9919 19.5328 13.6128 19.6167 13.1908L21.0833 5.49996H5.49999" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M8.25001 20.1667C8.75627 20.1667 9.16668 19.7563 9.16668 19.25C9.16668 18.7438 8.75627 18.3334 8.25001 18.3334C7.74375 18.3334 7.33334 18.7438 7.33334 19.25C7.33334 19.7563 7.74375 20.1667 8.25001 20.1667Z"
+              stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M18.3333 20.1667C18.8396 20.1667 19.25 19.7563 19.25 19.25C19.25 18.7438 18.8396 18.3334 18.3333 18.3334C17.8271 18.3334 17.4167 18.7438 17.4167 19.25C17.4167 19.7563 17.8271 20.1667 18.3333 20.1667Z"
+              stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M0.916656 0.916626H4.58332L7.03999 13.1908C7.12381 13.6128 7.35341 13.9919 7.68857 14.2617C8.02374 14.5315 8.44313 14.6749 8.87332 14.6666H17.7833C18.2135 14.6749 18.6329 14.5315 18.9681 14.2617C19.3032 13.9919 19.5328 13.6128 19.6167 13.1908L21.0833 5.49996H5.49999"
+              stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </g>
           <defs>
             <clipPath id="clip0_6967_102">
-              <rect width="22" height="22" fill="white"/>
+              <rect width="22" height="22" fill="white" />
             </clipPath>
           </defs>
         </svg>
       </div>
-      <span class="basket-number mobile">1</span>
+      <span class="basket-number mobile"></span>
+    </div>
+
+    <!-- модальное окно для корзины  -->
+    <div class="basket-modal__wrapper">
+      <div class="basket-modal">
+        <div class="modal__title">
+          Оформление заказа
+          <img class="modal-close" src="images/multiply.svg" alt="">
+        </div>
+
+        <div class="modal__product">
+        </div>
+
+        <div class="modal__result">
+          <div class="buy">
+            <button class="buy__btn" type="submit">Оплатить</button>
+          </div>
+          <div class="wrapp__result">
+            <span class="result-text">Итого</span>
+            <div class="result-val">
+              <span class="result">0</span>
+              <span class=""> ₽</span>
+            </div>
+            <div class="coll-wrapper">
+              <span class="coll">0</span>
+              <span class="coll__text">шт</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- меню список телефон -->
@@ -180,71 +202,71 @@
 
         <!-- france  -->
 
-        <div class="reproductions-paintings" data-tab-content id="tab-1">
-          <div class="reproductions-paintings__item">
+        <div class="reproductions-paintings" id="product-container" data-tab-content id="tab-1">
+          <div class="reproductions-paintings__item" data-id="01">
             <img class="reproductions-paintings__img" src="./images/france/france-1.avif" alt="">
             <div class="paintings__text">
-              <p>Марсель Руссо</p>
-              <h4>Охота Амура</h4>
-              <i>Холст, масло (50х80) </i>
-              <span>14 500 руб</span>
+              <p data-p>Марсель Руссо</p>
+              <h4 data-h4>Охота Амура</h4>
+              <i data-i>Холст, масло (50х80) </i>
+              <span data-span>14500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart="plus">В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="02">
             <img class="reproductions-paintings__img" src="./images/france/france-2.avif" alt="">
             <div class="paintings__text">
-              <p>Анри Селин</p>
-              <h4>Дама с собачкой</h4>
-              <i>Акрил, бумага (50х80) </i>
-              <span>16 500 руб</span>
+              <p data-p>Анри Селин</p>
+              <h4 data-h4>Дама с собачкой</h4>
+              <i data-i>Акрил, бумага (50х80) </i>
+              <span data-span>16500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn " data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="03">
             <img class="reproductions-paintings__img" src="./images/france/france-3.avif" alt="">
             <div class="paintings__text">
-              <p>Франсуа Дюпон</p>
-              <h4>Процедура</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>20 000 руб</span>
+              <p data-p>Франсуа Дюпон</p>
+              <h4 data-h4>Процедура</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>20000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="04">
             <img class="reproductions-paintings__img" src="./images/france/france-4.avif" alt="">
             <div class="paintings__text">
-              <p>Луи Детуш</p>
-              <h4>Роза</h4>
-              <i>Бумага, акрил (50х80) </i>
-              <span>12 000 руб</span>
+              <p data-p>Луи Детуш</p>
+              <h4 data-h4>Роза</h4>
+              <i data-i>Бумага, акрил (50х80) </i>
+              <span data-span>12000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="05">
             <img class="reproductions-paintings__img" src="./images/france/france-5.avif" alt="">
             <div class="paintings__text">
-              <p>Франсуа Дюпон</p>
-              <h4>Птичья трапеза</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>22 500 руб</span>
+              <p data-p>Франсуа Дюпон</p>
+              <h4 data-h4>Птичья трапеза</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>22500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="06">
             <img class="reproductions-paintings__img" src="./images/france/france-6.avif" alt="">
             <div class="paintings__text">
-              <p>Пьер Моранж</p>
-              <h4>Пейзаж с рыбой</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>20 000 руб</span>
+              <p data-p>Пьер Моранж</p>
+              <h4 data-h4>Пейзаж с рыбой</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>20000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
         </div>
@@ -252,70 +274,70 @@
         <!-- germany -->
 
         <div class="reproductions-paintings hidden" data-tab-content id="tab-2">
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="07">
             <img class="reproductions-paintings__img" src="./images/germany/germany-1.avif" alt="">
             <div class="paintings__text">
-              <p>Курт Вернер</p>
-              <h4>Над городом</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>16 000 руб</span>
+              <p data-p>Курт Вернер</p>
+              <h4 data-h4>Над городом</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>16000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="08">
             <img class="reproductions-paintings__img" src="./images/germany/germany-2.avif" alt="">
             <div class="paintings__text">
-              <p>Макс Рихтер</p>
-              <h4>Птенцы</h4>
-              <i>Холст, масло (50х80) </i>
-              <span>14 500 руб</span>
+              <p data-p>Макс Рихтер</p>
+              <h4 data-h4>Птенцы</h4>
+              <i data-i>Холст, масло (50х80) </i>
+              <span data-span>14500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="09">
             <img class="reproductions-paintings__img" src="./images/germany/germany-3.avif" alt="">
             <div class="paintings__text">
-              <p>Мартин Майер</p>
-              <h4>Среди листьев</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>20 000 руб</span>
+              <p data-p>Мартин Майер</p>
+              <h4 data-h4>Среди листьев</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>20000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="10">
             <img class="reproductions-paintings__img" src="./images/germany/germany-4.avif" alt="">
             <div class="paintings__text">
-              <p>Герман Беккер</p>
-              <h4>Яркая птица</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>13 000 руб</span>
+              <p data-p>Герман Беккер</p>
+              <h4 data-h4>Яркая птица</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>13000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="11">
             <img class="reproductions-paintings__img" src="./images/germany/germany-5.avif" alt="">
             <div class="paintings__text">
-              <p>Вульф Бауэр </p>
-              <h4>Дятлы</h4>
-              <i>Бумага, акрил (50х80) </i>
-              <span>20 000 руб</span>
+              <p data-p>Вульф Бауэр </p>
+              <h4 data-h4>Дятлы</h4>
+              <i data-i>Бумага, акрил (50х80) </i>
+              <span data-span>20000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="12">
             <img class="reproductions-paintings__img" src="./images/germany/germany-6.avif" alt="">
             <div class="paintings__text">
-              <p>Вальтер Хартманн</p>
-              <h4>Большие воды</h4>
-              <i>Бумага, акрил (50х80) </i>
-              <span>23 000 руб</span>
+              <p data-p>Вальтер Хартманн</p>
+              <h4 data-h4>Большие воды</h4>
+              <i data-i>Бумага, акрил (50х80) </i>
+              <span data-span>23000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
         </div>
@@ -323,70 +345,70 @@
         <!-- england -->
 
         <div class="reproductions-paintings hidden " data-tab-content id="tab-3">
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="13">
             <img class="reproductions-paintings__img" src="./images/england/england-1.avif" alt="">
             <div class="paintings__text">
-              <p>Пол Смит</p>
-              <h4>Дикий зверь</h4>
-              <i>Акварель, бумага (50х80) </i>
-              <span>19 500 руб</span>
+              <p data-p>Пол Смит</p>
+              <h4 data-h4>Дикий зверь</h4>
+              <i data-i>Акварель, бумага (50х80) </i>
+              <span data-span>19500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="14">
             <img class="reproductions-paintings__img" src="./images/england/england-2.avif" alt="">
             <div class="paintings__text">
-              <p>Джон Уайт</p>
-              <h4>Скалистый берег</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>17 500 руб</span>
+              <p data-p>Джон Уайт</p>
+              <h4 data-h4>Скалистый берег</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>17500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="15">
             <img class="reproductions-paintings__img" src="./images/england/england-3.avif" alt="">
             <div class="paintings__text">
-              <p>Джим Уотсон</p>
-              <h4>Река и горы</h4>
-              <i>Акварель, бумага (50х80) </i>
-              <span>20 500 руб</span>
+              <p data-p>Джим Уотсон</p>
+              <h4 data-h4>Река и горы</h4>
+              <i data-i>Акварель, бумага (50х80) </i>
+              <span data-span>20500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="16">
             <img class="reproductions-paintings__img" src="./images/england/england-4.avif" alt="">
             <div class="paintings__text">
-              <p>Юджин Зиллион</p>
-              <h4>Белый попугай</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>15 500 руб</span>
+              <p data-p>Юджин Зиллион</p>
+              <h4 data-h4>Белый попугай</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>15500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="17">
             <img class="reproductions-paintings__img" src="./images/england/england-5.avif" alt="">
             <div class="paintings__text">
-              <p>Эрик Гиллман</p>
-              <h4>Ночная рыба</h4>
-              <i>Бумага, акрил (50х80) </i>
-              <span>12 500 руб</span>
+              <p data-p>Эрик Гиллман</p>
+              <h4 data-h4>Ночная рыба</h4>
+              <i data-i>Бумага, акрил (50х80) </i>
+              <span data-span>12500 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
-          <div class="reproductions-paintings__item">
+          <div class="reproductions-paintings__item" data-id="18">
             <img class="reproductions-paintings__img" src="./images/england/england-6.avif" alt="">
             <div class="paintings__text">
-              <p>Альфред Барр</p>
-              <h4>Рыжий кот</h4>
-              <i>Цветная литография (40х60) </i>
-              <span>21 000 руб</span>
+              <p data-p>Альфред Барр</p>
+              <h4 data-h4>Рыжий кот</h4>
+              <i data-i>Цветная литография (40х60) </i>
+              <span data-span>21000 руб</span>
             </div>
-            <button class="paintings__btn">В корзину</button>
+            <button class="paintings__btn" data-cart>В корзину</button>
           </div>
 
         </div>
@@ -491,7 +513,7 @@
               <a class="menu-footer__item-link" href="#!">Англия</a>
             </li>
           </ul>
-          
+
           <ul class="menu-footer__list column-second">
             <li class="menu-footer__item-bold">
               <p class="menu-footer__item-text" href="#!">Новинки</p>
@@ -588,4 +610,5 @@
 
 
 </body>
+
 </html>
