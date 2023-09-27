@@ -72,7 +72,7 @@
   .collection {
     width: 100%;
     height: 90%;
-    background-image: url("../images/fone-mob.png") !important;
+    background-image: url("../images/fone-mob.webp") !important;
   }
 
   .collection__text p {
@@ -159,7 +159,9 @@
   }
 
   .heder__basket {
-    margin-right: 20px;
+    margin-right: 0px;
+    position: absolute;
+    right: 18px;
   }
 
   .navigation-btn {
@@ -356,8 +358,13 @@
 
 
 @media (max-width: 508px) {
-  .menu {
+  .menu__item {
     display: none;
+  }
+  .menu {
+    &::after {
+      display: none;
+    }
   }
 
   .basket-mobile {
@@ -445,6 +452,9 @@
   .menu-list__mobile {
     font-size: 18px;
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
   }
 
   .menu-mobile.active-menu {

@@ -15,10 +15,10 @@
 
 
 
+  <script src="js/main.min.js" defer></script>
   <script src="js/basket.js" defer></script>
   <script src="js/calcCartPrice.js" defer></script>
   <script src="js/cart-01.js" defer></script>
-  <script src="js/main.min.js" defer></script>
 
 </head>
 
@@ -47,13 +47,9 @@
           <li class="menu__item">
             <a class="menu__item-link" href="#!">Репродукции</a>
           </li>
-        </ul>
-        <ul class="menu__list">
           <li class="menu__item">
             <a class="menu__item-link" href="#!">Новинки</a>
           </li>
-        </ul>
-        <ul class="menu__list">
           <li class="menu__item">
             <a class="menu__item-link" href="#!">О нас</a>
           </li>
@@ -85,8 +81,8 @@
       </nav>
 
       <!-- корзина мобайл -->
-      
-      <div class="basket-mobile">
+
+      <!-- <div class="basket-mobile">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
           <g clip-path="url(#clip0_6967_102)">
             <path
@@ -106,58 +102,54 @@
           </defs>
         </svg>
       </div>
-      <span class="basket-number mobile"></span>
-    </div>
+      <span class="basket-number" data-col></span>
+    </div> -->
 
-    <!-- модальное окно для корзины  -->
-    <div class="basket-modal__wrapper">
-      <div class="basket-modal">
-        <div class="modal__title">
-          Оформление заказа
-          <img class="modal-close" src="images/multiply.svg" alt="">
-        </div>
-
-        <div class="modal__product">
-        </div>
-
-        <div class="modal__result">
-          <div class="buy">
-            <button class="buy__btn" type="submit">Оплатить</button>
+      <!-- модальное окно для корзины  -->
+      <div class="basket-modal__wrapper">
+        <div class="basket-modal">
+          <div class="modal__title">
+            Оформление заказа
+            <img class="modal-close" src="images/multiply.svg" alt="">
           </div>
-          <div class="wrapp__result">
-            <span class="result-text">Итого</span>
-            <div class="result-val">
-              <span class="result">0</span>
-              <span class=""> ₽</span>
+
+          <div class="modal__product">
+          </div>
+
+          <div class="modal__result">
+            <div class="buy">
+              <button class="buy__btn" type="submit">Оплатить</button>
             </div>
-            <div class="coll-wrapper">
-              <span class="coll">0</span>
-              <span class="coll__text">шт</span>
+            <div class="wrapp__result">
+              <span class="result-text">Итого</span>
+              <div class="result-val">
+                <span class="result">0</span>
+                <span class=""> ₽</span>
+              </div>
+              <div class="coll-wrapper">
+                <span class="coll">0</span>
+                <span class="coll__text">шт</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- меню список телефон -->
+      <!-- меню список телефон -->
 
-    <nav class="menu-mobile">
-      <ul class="menu__list menu-list__mobile">
-        <li class="menu__item">
-          <a class="menu__item-link" href="#!">Репродукции</a>
-        </li>
-      </ul>
-      <ul class="menu__list menu-list__mobile">
-        <li class="menu__item">
-          <a class="menu__item-link" href="#!">Новинки</a>
-        </li>
-      </ul>
-      <ul class="menu__list menu-list__mobile">
-        <li class="menu__item">
-          <a class="menu__item-link" href="#!">О нас</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="menu-mobile">
+        <ul class="menu__list menu-list__mobile">
+          <li class="menu__item-tel">
+            <a class="menu__item-link" href="#!">Репродукции</a>
+          </li>
+          <li class="menu__item-tel">
+            <a class="menu__item-link" href="#!">Новинки</a>
+          </li>
+          <li class="menu__item-tel">
+            <a class="menu__item-link" href="#!">О нас</a>
+          </li>
+        </ul>
+      </nav>
 
   </header>
 
@@ -168,7 +160,7 @@
       <div class="main__wraper">
 
         <div class="main__wraper-img">
-          <img class="main__img" src="images/fone-header.png" alt="">
+          <img class="main__img" src="./images/fone-header.webp" alt="">
         </div>
 
         <div class="main__content">
@@ -202,7 +194,7 @@
 
         <!-- france  -->
 
-        <div class="reproductions-paintings" id="product-container" data-tab-content id="tab-1">
+        <div class="reproductions-paintings" data-tab-content id="tab-1">
           <div class="reproductions-paintings__item" data-id="01">
             <img class="reproductions-paintings__img" src="./images/france/france-1.avif" alt="">
             <div class="paintings__text">
@@ -419,7 +411,7 @@
 
   <!-- Третье окно  -->
 
-  <section class="collection" style="background-image: url(images/fone-pain.png);">
+  <section class="collection" style="background-image: url(images/fone-pain.webp);">
     <div class="container">
       <div class="collection__wrapper">
         <div class="collection-new">
@@ -454,8 +446,8 @@
       <div class="team-wrapper">
 
         <div class="team-wrapper__img">
-          <img class="team__img-frame" src="images/frame-pn.png" alt="frame">
-          <img class="team__img-arm" src="images/arm-pn.png" alt="arm">
+          <img class="team__img-frame" src="images/frame-pn.webp" alt="frame">
+          <img class="team__img-arm" src="images/arm-pn.webp" alt="arm">
         </div>
 
         <div class="team-our">

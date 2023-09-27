@@ -27,12 +27,34 @@
   font-size: 20px;
   font-weight: 700;
 }
-
 .menu {
+  display: flex;
+  gap: 124px;
+}
+.menu__list {
   display: flex;
   gap: 60px;
 }
+.menu__item {
+  text-wrap: nowrap;
+}
+.menu__item-tel {
+  color: #2C2D35;
+  font-size: 20px;
+  transition: all .35s ease;
 
+  &:hover {
+    color: #598D66;
+  }
+
+  &:focus {
+    background-color: #D4E8D9;
+  }
+
+  &:active {
+    color: #376B44;
+  }
+}
 .menu__item-link {
   color: #2C2D35;
   font-size: 20px;
@@ -54,7 +76,7 @@
 .heder__basket_link {
   display: block;
   transition: all .35s ease;
-
+  position: relative;
   &:hover path {
     stroke: #598D66;
     transition: all .35s ease;
@@ -79,6 +101,24 @@
   opacity: 1;
 }
 
+.basket-number.basket-number__tel {
+  top: 50px;
+  width: 13px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  background-color: #598D66;
+  border-radius: 50px;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  transition: all .45s ease;
+  transform: scale(0);
+  opacity: 0;
+  z-index: 1;
+}
+
 .basket-number {
   top: 0;
   width: 13px;
@@ -93,12 +133,12 @@
   text-align: center;
   transition: all .45s ease;
   transform: scale(0);
-  visibility: hidden;
+  opacity: 0;
   z-index: 1;
 }
 .basket-number.basket--activ {
   transform: scale(1);
-  visibility: visible;
+  opacity: 1;
   transition: all .45s ease;
 }
 
@@ -218,6 +258,7 @@
   border: 1px solid #598d66;
   font-size: 14px;
   color: #598d66;
+  background-color: #376B44;
   -webkit-transition: all .65s ease;
   transition: all .65s ease;
   cursor: pointer;
@@ -529,7 +570,6 @@
 
 .hidden {
   display: none;
-
 }
 
 
@@ -552,7 +592,7 @@
 
   &::before {
     content: "";
-    background-image: url('../images/Rectangle.png');
+    background-image: url('../images/Rectangle.webp');
     position: absolute;
     width: 100%;
     height: 100%;

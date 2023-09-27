@@ -1,5 +1,5 @@
 
-const productContainer = document.querySelector('.reproductions-paintings');
+const productContainer = document.querySelectorAll('.reproductions-paintings');
 getProducts()
 
 async function getProducts() {

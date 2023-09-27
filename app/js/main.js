@@ -47,13 +47,13 @@ basket.addEventListener('click', () => {
   });
 });
 
-basketMobile.addEventListener('click', () => {
-  basketModal.classList.add('open')
+// basketMobile.addEventListener('click', () => {
+//   basketModal.classList.add('open')
 
-  modalClose.addEventListener('click', () => {
-    basketModal.classList.remove('open')
-  });
-});
+//   modalClose.addEventListener('click', () => {
+//     basketModal.classList.remove('open')
+//   });
+// });
 
 
 

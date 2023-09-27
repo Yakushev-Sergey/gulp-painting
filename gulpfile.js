@@ -48,9 +48,11 @@ function fonts() {
 
 
 function images() {
-    return src(['app/images/src/**/*/*.*', '!app/images/src/**/*/*.svg'])
+    return src(['app/images/src/**/*/*.*', '!app/images/src/**/*/*.svg',
+    '!app/images/src/*.svg'])
     .pipe(newer('app/images/**/*'))
-    .pipe(avif( {quality : 50}))
+
+    .pipe(avif( {quality: 50} ))
 
     .pipe(src('app/images/src/**/*/*.*'))
     .pipe(newer('app/images'))
@@ -61,6 +63,7 @@ function images() {
     .pipe(imagemin())
 
     .pipe(dest('app/images'))
+
 }
 
 
@@ -81,7 +84,7 @@ function sprite() {
 
 function scripts() {
     return src([
-        'app/js/main.js',
+        './app/js/main.js',
     ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
